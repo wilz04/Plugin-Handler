@@ -1,0 +1,22 @@
+/**
+ * @alias Index.class
+ * @author WilC <wilz04@gmail.com>
+ * @since 2012
+ */
+var IndexHandler = {
+	
+	init: function (sender, e) {
+		var removeLink = '<a class="remove" href="#" onclick="IndexHandler.onRemoveClick($(this), event)">Remove</a>';
+		$('a.add').relCopy({append: removeLink});
+	},
+	
+	onRemoveClick: function (sender, e) {
+		sender.parent().slideUp(IndexHandler.remove);
+		return false;
+	},
+	
+	remove: function () {
+		$(this).remove();
+	}
+	
+};

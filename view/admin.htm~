@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="lib/jquery.min.js"></script>
+		<!-- script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script -->
+		<script type="text/javascript" src="lib/reCopy.js"></script>
+		<script type="text/javascript" src="controller/AdminHandler.class.js"></script>
+		<link type="text/css" rel="stylesheet" media="screen" href="view/master.css" />
+		<title>Prototype 0.1</title>
+	</head>
+	
+	<body onload="AdminHandler.init(document, event);">
+		<table cellpadding="2" cellspacing="2">
+			<tr>
+				<td width="25%">
+					<h1>Importar Plugin</h1>
+					<form id="foImport" name="foImport" action="import.php" target="_self" method="POST" enctype="multipart/form-data">
+						<input type="file" id="flPlugin" name="flPlugin" />
+						<input type="submit" id="btImport" name="btImport" value="Importar" />
+					</form>
+				</td>
+				<td width="50%">
+					<h1>Nuevo Formulario</h1>
+					<form id="foNew" name="foNew" target="_self" method="post" action="new.php">
+						<span class="clone">
+							<input type="text" name="txLabel[]" placeholder="Etiqueta" />
+							<input type="checkbox" name="cbRequired[]" value="1" />
+							<label>Respuesta Requerida</label>
+						</span>
+						<p><a href="#" class="add" rel=".clone">+</a></p>
+						<input type="submit" id="btSave" name="btSave" value="Guardar" />
+					</form>
+				</td>
+				<td width="25%">
+					<form id="foEnable" name="foEnable" action="enable.php" target="_self" method="post">
+						<h1>Plugins Disponibles</h1>
+						<div>&plugins;</div>
+					</form>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
