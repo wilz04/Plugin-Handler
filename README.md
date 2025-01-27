@@ -1,2 +1,0 @@
-# Plugin-Handler
-\Polygon\App
